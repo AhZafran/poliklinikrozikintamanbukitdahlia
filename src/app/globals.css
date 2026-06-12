@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand: royal blue with soft pastel accents */
+    --background: 220 30% 99%;
+    --foreground: 222 47% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 14%;
+
+    /* Primary: royal blue */
+    --primary: 224 76% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: pastel sky */
+    --secondary: 210 100% 92%;
+    --secondary-foreground: 222 60% 22%;
+
+    --muted: 220 20% 96%;
+    --muted-foreground: 222 14% 42%;
+
+    /* Accent: pastel peach (warm complement to royal blue) */
+    --accent: 24 100% 92%;
+    --accent-foreground: 24 60% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 22% 92%;
+    --input: 220 22% 90%;
+    --ring: 224 76% 56%;
+
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  html,
+  body {
+    overflow-x: clip;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .bg-pastel-gradient {
+    background:
+      radial-gradient(1200px 600px at 10% -10%, hsl(220 100% 94%) 0%, transparent 60%),
+      radial-gradient(1000px 500px at 110% 10%, hsl(260 80% 94%) 0%, transparent 55%),
+      radial-gradient(900px 500px at 50% 110%, hsl(195 100% 94%) 0%, transparent 55%),
+      hsl(var(--background));
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .shadow-soft {
+    box-shadow: 0 10px 30px -10px rgba(65, 105, 225, 0.18),
+      0 4px 10px -4px rgba(30, 50, 110, 0.08);
+  }
+
+  .shadow-soft-lg {
+    box-shadow: 0 25px 60px -15px rgba(65, 105, 225, 0.28),
+      0 10px 25px -10px rgba(30, 50, 110, 0.12);
+  }
+}
