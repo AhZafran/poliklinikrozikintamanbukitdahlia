@@ -1,90 +1,79 @@
-import {
-  Baby,
-  Stethoscope,
-  Syringe,
-  HeartPulse,
-  Activity,
-  Pill,
-  Scissors,
-  ClipboardCheck,
-  Microscope,
-  Scale,
-} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { MedicalIcon } from "@/components/ui/medical-icon";
 
 const services = [
   {
-    icon: Stethoscope,
+    icon: "i-family-practice" as const,
     title: "Konsultasi Am",
     desc: "Pemeriksaan dan rawatan untuk demam, batuk, selsema dan penyakit harian.",
     bg: "bg-pastel-pink",
     iconColor: "text-rose-700",
   },
   {
-    icon: Baby,
+    icon: "i-pediatrics" as const,
     title: "Penjagaan Ibu & Anak",
     desc: "Pemeriksaan antenatal, postnatal, imunisasi kanak-kanak dan nasihat penyusuan.",
     bg: "bg-pastel-peach",
     iconColor: "text-amber-700",
   },
   {
-    icon: Syringe,
+    icon: "i-immunizations" as const,
     title: "Vaksinasi",
     desc: "Vaksin kanak-kanak, dewasa, influenza, HPV, demam kepialu dan banyak lagi.",
     bg: "bg-pastel-sky",
     iconColor: "text-sky-700",
   },
   {
-    icon: HeartPulse,
+    icon: "i-cardiology" as const,
     title: "Penyakit Kronik",
     desc: "Pengurusan kencing manis, darah tinggi, kolesterol tinggi dan asma.",
     bg: "bg-pastel-mint",
     iconColor: "text-emerald-700",
   },
   {
-    icon: ClipboardCheck,
+    icon: "i-health-services" as const,
     title: "Pemeriksaan Kesihatan",
     desc: "Pakej pemeriksaan menyeluruh untuk individu, pra-pekerjaan dan korporat.",
     bg: "bg-pastel-lavender",
     iconColor: "text-violet-700",
   },
   {
-    icon: Microscope,
+    icon: "i-laboratory" as const,
     title: "Ujian Makmal",
     desc: "Ujian darah, air kencing, kehamilan, HbA1c dan saringan penyakit berjangkit.",
     bg: "bg-pastel-cream",
     iconColor: "text-amber-800",
   },
   {
-    icon: Scissors,
+    icon: "i-surgery" as const,
     title: "Pembedahan Kecil",
     desc: "Jahitan luka, buang ketuat, jagaan luka dan prosedur kecil lain.",
     bg: "bg-pastel-pink",
     iconColor: "text-rose-700",
   },
   {
-    icon: Activity,
+    icon: "i-medical-records" as const,
     title: "Kesihatan Pekerjaan",
     desc: "Pemeriksaan FOMEMA, medical check-up pemandu dan saringan pekerja.",
     bg: "bg-pastel-sky",
     iconColor: "text-sky-700",
   },
   {
-    icon: Syringe,
+    icon: "i-immunizations" as const,
     title: "Suntikan Penurunan Berat Badan",
     desc: "Suntikan terkawal di bawah pengawasan doktor untuk pengurusan berat badan jangka panjang.",
     bg: "bg-pastel-pink",
     iconColor: "text-rose-700",
   },
   {
-    icon: Pill,
+    icon: "i-pharmacy" as const,
     title: "Ubat Penurunan Berat Badan",
     desc: "Preskripsi ubat moden yang selamat untuk membantu pengurangan berat badan secara berkesan.",
     bg: "bg-pastel-mint",
     iconColor: "text-emerald-700",
   },
   {
-    icon: Scale,
+    icon: "i-nutrition" as const,
     title: "Penilaian Penurunan Berat Badan",
     desc: "Analisis komposisi badan dan konsultasi untuk pelan penurunan berat badan yang sesuai untuk anda.",
     bg: "bg-pastel-lavender",
@@ -123,7 +112,10 @@ export function Services() {
               <div
                 className={`mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl ${s.bg} transition-transform group-hover:scale-110 group-hover:rotate-3`}
               >
-                <s.icon className={`h-7 w-7 ${s.iconColor}`} />
+                <MedicalIcon
+                  name={s.icon}
+                  className={`h-8 w-8 ${s.iconColor}`}
+                />
               </div>
               <h3 className="font-display text-xl font-semibold text-foreground">
                 {s.title}

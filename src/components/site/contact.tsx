@@ -12,7 +12,7 @@ export function Contact() {
             Hubungi Kami
           </Badge>
           <h2 className="font-display text-balance text-3xl font-semibold leading-tight tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            Kami sedia <span className="text-primary">melayani anda</span>
+            Kami sedia <span className="text-primary">membantu anda</span>
           </h2>
           <p className="mt-4 text-base text-muted-foreground sm:text-lg">
             Hubungi kami untuk sebarang pertanyaan, tempahan temujanji atau
