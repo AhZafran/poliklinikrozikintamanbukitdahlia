@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CalendarHeart, Stethoscope, ShieldCheck, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { whatsappUrl } from "@/lib/site";
@@ -70,11 +71,18 @@ export function Hero() {
               {/* Doctor image card */}
               <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-pastel-sky via-pastel-lavender to-pastel-cream shadow-soft-lg overflow-hidden">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.6),transparent_50%)]" />
-                <DoctorIllustration />
+                <Image
+                  src="/images/hero/drpoli-nobg.png"
+                  alt="Doktor Poliklinik Rozikin"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 28rem"
+                  className="object-contain object-bottom drop-shadow-[0_20px_25px_rgba(0,0,0,0.12)]"
+                />
               </div>
 
               {/* Floating cards */}
-              <div className="absolute -left-6 top-12 hidden sm:flex items-center gap-3 rounded-2xl bg-white/90 backdrop-blur p-3 shadow-soft animate-float">
+              <div className="absolute -left-2 top-12 flex sm:-left-6 items-center gap-3 rounded-2xl bg-white/90 backdrop-blur p-3 shadow-soft animate-float">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-pastel-mint">
                   <ShieldCheck className="h-5 w-5 text-emerald-700" />
                 </div>
@@ -84,7 +92,7 @@ export function Hero() {
                 </div>
               </div>
 
-              <div className="absolute -right-4 bottom-16 hidden sm:flex items-center gap-3 rounded-2xl bg-white/90 backdrop-blur p-3 shadow-soft animate-float [animation-delay:1s]">
+              <div className="absolute -right-2 bottom-16 flex sm:-right-4 items-center gap-3 rounded-2xl bg-white/90 backdrop-blur p-3 shadow-soft animate-float [animation-delay:1s]">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-pastel-sky">
                   <Clock className="h-5 w-5 text-sky-700" />
                 </div>
@@ -112,42 +120,5 @@ function Stat({ value, label }: { value: string; label: string }) {
         {label}
       </p>
     </div>
-  );
-}
-
-function DoctorIllustration() {
-  return (
-    <svg
-      viewBox="0 0 320 400"
-      className="absolute inset-0 h-full w-full"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden
-    >
-      {/* Background circles */}
-      <circle cx="160" cy="170" r="110" fill="rgba(255,255,255,0.35)" />
-      <circle cx="160" cy="170" r="80" fill="rgba(255,255,255,0.45)" />
-
-      {/* Doctor silhouette */}
-      <g>
-        {/* Head */}
-        <circle cx="160" cy="135" r="42" fill="#FFE0CB" />
-        {/* Hijab/Hair */}
-        <path d="M120 130 Q120 80 160 80 Q200 80 200 130 Q200 165 195 190 L125 190 Q120 165 120 130 Z" fill="#5B3D5E" />
-        <path d="M125 175 L125 210 L195 210 L195 175 Z" fill="#5B3D5E" opacity="0.6" />
-        {/* Face features */}
-        <circle cx="146" cy="138" r="2.5" fill="#3a2a3b" />
-        <circle cx="174" cy="138" r="2.5" fill="#3a2a3b" />
-        <path d="M150 155 Q160 162 170 155" stroke="#3a2a3b" strokeWidth="2" fill="none" strokeLinecap="round" />
-        {/* Body / coat */}
-        <path d="M90 220 Q90 200 130 195 L190 195 Q230 200 230 220 L230 360 L90 360 Z" fill="#ffffff" />
-        <path d="M150 200 L160 240 L170 200 Z" fill="#FFB3C7" />
-        {/* Stethoscope */}
-        <path d="M140 210 Q140 250 160 260 Q180 250 180 210" stroke="#3a2a3b" strokeWidth="3" fill="none" />
-        <circle cx="160" cy="268" r="8" fill="#3a2a3b" />
-        <circle cx="160" cy="268" r="4" fill="#FFB3C7" />
-        {/* Pocket / badge */}
-        <rect x="190" y="240" width="22" height="14" rx="3" fill="#FFE5D4" />
-      </g>
-    </svg>
   );
 }
