@@ -19,7 +19,7 @@ const services = [
   {
     icon: "i-immunizations" as const,
     title: "Vaksinasi",
-    desc: "Vaksin kanak-kanak, dewasa, influenza, HPV, demam kepialu dan banyak lagi.",
+    desc: "Vaksin kanak-kanak, dewasa, influenza, demam kepialu dan banyak lagi.",
     bg: "bg-pastel-sky",
     iconColor: "text-sky-700",
   },
@@ -40,7 +40,7 @@ const services = [
   {
     icon: "i-laboratory" as const,
     title: "Ujian Makmal",
-    desc: "Ujian darah, air kencing, kehamilan, HbA1c dan saringan penyakit berjangkit.",
+    desc: "Ujian darah, air kencing, HbA1c, profil lipid dan saringan kesihatan asas.",
     bg: "bg-pastel-cream",
     iconColor: "text-amber-800",
   },
